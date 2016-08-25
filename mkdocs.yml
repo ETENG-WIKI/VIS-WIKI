@@ -1,0 +1,5 @@
+site_name: 乡村销客知识库
+pages:
+- 首页: index.md
+- SVN: svn.md
+theme: readthedocs
