@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>SVN - 乡村销客知识库</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "SVN";
+    var mkdocs_page_input_path = "svn.md";
+    var mkdocs_page_url = "/svn/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> 乡村销客知识库</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">首页</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">SVN</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#svn">乡村销客svn版本控制和发布流程</a></li>
+                
+                    <li><a class="toctree-l4" href="#_1">职责说明</a></li>
+                
+                    <li><a class="toctree-l4" href="#_2">流程明细</a></li>
+                
+                    <li><a class="toctree-l4" href="#_3">总体说明</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">乡村销客知识库</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>SVN</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="svn">乡村销客svn版本控制和发布流程</h1>
+<p><img alt="乡村销客svn版本控制和发布流程" src="http://i.imgur.com/0UpW1J7.png" /></p>
+<h2 id="_1">职责说明</h2>
+<pre><code>Trunk:记录当前最新代码，用于项目测试、正式内容发版，代码只允许从分支合并，不允许任何人直接修改trunk代码
+branches：各版本开发主线，基于每次发版内容定义开发分支，开发人员日常代码管理主线，用于日常开发、BUG维护、合并主干等，可修改、合并
+tags：记录每次发版内容，即每次测试、正式发版内容备份，用于记录发版内容及紧急bug处理，不允许任何人修改、合并
+</code></pre>
+<h2 id="_2">流程明细</h2>
+<pre><code>一、新版本发版流程（同步）
+    - 各项目团队负责人，定义新版本发版内容（注：发版内容在后续开发中起到指导作用，尽量定义好发版内容、发版时间
+    - 根据发版内容定义分支（branches:dev2.3.1），如果存在发版时间差异问题，建议建立其他分支（branches:dev2.3.2 不要影响dev2.3.1发版内容）
+    - 各个团队根据定义内容进行开发，日常代码在分支上（branches:dev2.3.1）维护，并定时提交到主干
+    - 项目开发到完成阶段后，系统将主干内容发布到测试服务器进行测试，测试中延续版本迭代进行测试发版
+    - 测试通过后，进行正式发版，并维护正版对应版本
+    - 完成后，分支（branches:dev2.3.1）作废
+
+    ** 注意：正式发版后，随着开发团队的推进，会连续的将新增代码合并至主干，因此，开发代码一旦合并到主干上后，如果出现严重bug问题，只能在正式版本中创建分支，进行修改，并合并至主干，具体参考紧急bug处理流程 ## #**
+
+二、新版本发版流程（异步）
+
+    - 各项目团队负责人，定义新版本发版内容（注：发版内容在后续开发中起到指导作用，尽量定义好发版内容、发版时间） 
+    - 存在时间发版时间差异，需再原定义的版本号上加一，并创建分支（branches:dev2.3.2）
+    - 开发人员在分支上维护开发代码，不允许往trunk上合并
+    - 当上个版本正式发版后，需要将trunk代码合并至分支（branches:dev2.3.2），然后进行开发，后续开发可合并至主干
+    - 项目开发到完成阶段后，系统将主干内容发布到测试服务器进行测试，测试中延续版本迭代进行测试发版
+    - 测试通过后，进行正式发版，并维护正版对应版本
+    - 完成后，分支（branches:dev2.3.2）作废
+
+    **注意：正式发版后，随着开发团队的推进，会连续的将新增代码合并至主干，因此，开发代码一旦合并到主干上后，如果出现严重BUG问题，只能在正式版本中创建分支，进行修改，并合并至主干，具体参考紧急BUG处理流程**
+
+三、紧急bug处理流程
+    已发布的正式版本，如果出现紧急BUG，则需要马上处理，具体流程如下：
+    - 发现紧急BUG需马上处理
+    - 项目切换至正式版本下，发布新的分支（branches:dev2.3.1bugfix）
+    - 在分支中还原BUG，并解决
+    - 在分支（branches:dev2.3.1bugfix）发布新的版本，并部署至生产服务器
+    - 将分支（branches:dev2.3.1bugfix）合并至主干，并同步合并至在开发的分支中
+
+    **注意：bug解决后，发版项目不再是trunk，需要将jenkins的发布svn的url切换，并发版**
+</code></pre>
+<h2 id="_3">总体说明</h2>
+<pre><code>定义开发内容，建立相应的开发版本dev1.0 ，dev1.1
+基于对应版本开发的人员代码都提交到相应的版本，另注意查看自己所在的版本
+dev1.0开发完成后，合并到trunk中，基于trunk部署到测试服务器，供测试人员测试
+测试完成后，根据定义发版日期发布trunk到正式服务器
+dev1.1开发把trunk的代码合并到dev1.1中保证此时代码和trunk代码一致
+1.0运行中发现bug，需紧急修复 从tags1.0中创建1.0bugfix分支
+bug修复代码提交到1.0bugfix，测试通过后，部署到正式服务器
+把1.0bugfix合并到trunk
+此后的操作按照上面的流程继续...
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href=".." class="btn btn-neutral" title="首页"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+
+</body>
+</html>
