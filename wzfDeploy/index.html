@@ -98,16 +98,16 @@
                 <li class="toctree-l3"><a href="#centos7">centos7端口号开放</a></li>
                 
             
-                <li class="toctree-l3"><a href="#nginx">nginx安装依赖</a></li>
+                <li class="toctree-l3"><a href="#nginxredis">安装nginx和redis依赖</a></li>
                 
             
-                <li class="toctree-l3"><a href="#nginx_1">nginx官网</a></li>
+                <li class="toctree-l3"><a href="#nginx">nginx官网</a></li>
                 
             
-                <li class="toctree-l3"><a href="#nginx_2">获取nginx</a></li>
+                <li class="toctree-l3"><a href="#nginx_1">获取nginx</a></li>
                 
             
-                <li class="toctree-l3"><a href="#nginx_3">解压nginx</a></li>
+                <li class="toctree-l3"><a href="#nginx_2">解压nginx</a></li>
                 
             
                 <li class="toctree-l3"><a href="#_2">编译安装</a></li>
@@ -197,8 +197,10 @@ docker --version或docker info //查看docker版本
 <pre><code>curl -SsL -o /tmp/csphere-install.sh https://csphere.cn/static/csphere-install-v2.sh
 sudo env ROLE=controller CSPHERE_VERSION=1.0.1 /bin/sh /tmp/csphere-install.sh
 </code></pre>
-<p><strong>注意：</strong> 希云安装，如果是多台服务器，只需要在一台上面装controller
-* 安装agent</p>
+<p><strong>注意：</strong> 希云安装，如果是多台服务器，只需要在一台上面装controller</p>
+</li>
+<li>
+<p>安装agent</p>
 <p>打开浏览器，访问controller A主机的1016端口，第一次访问填入管理员邮箱密码注册，即可看到控制台的界面。 点击左侧的“主机”菜单，进入主机列表页面，点击“添加主机”并复制脚本，在Agent主机安装Agent程序，即可开始希云cSphere旅途。</p>
 </li>
 </ul>
@@ -225,7 +227,9 @@ docker-enter 可以进入容器或直接在容器内执行命令：docker-enter 
 </code></pre>
 <h2 id="centos7">centos7端口号开放</h2>
 <ul>
-<li>开启端口<pre><code>firewall-cmd --zone=public --add-port=81/tcp --permanent
+<li>
+<p>开启端口</p>
+<pre><code>firewall-cmd --zone=public --add-port=81/tcp --permanent
 命令含义：
 --zone #作用域
 --add-port=80/tcp  #添加端口，格式为：端口/通讯协议
@@ -234,23 +238,26 @@ docker-enter 可以进入容器或直接在容器内执行命令：docker-enter 
 <ul>
 <li>
 <p>重启防火墙</p>
-<p>firewall-cmd --reload 
- * 查看已开启的端口号</p>
-<p>firewall-cmd --list-all </p>
+<p>firewall-cmd --reload </p>
 </li>
 </ul>
 </li>
+<li>
+<p>查看已开启的端口号</p>
+<pre><code>firewall-cmd --list-all
+</code></pre>
+</li>
 </ul>
-<h2 id="nginx">nginx安装依赖</h2>
+<h2 id="nginxredis">安装nginx和redis依赖</h2>
 <pre><code>yum install -y readline-devel pcre-devel openssl-devel gcc
 </code></pre>
-<h2 id="nginx_1">nginx官网</h2>
+<h2 id="nginx">nginx官网</h2>
 <p><a href="http://openresty.org/" title="nginx官网">http://openresty.org/</a></p>
-<h2 id="nginx_2">获取nginx</h2>
+<h2 id="nginx_1">获取nginx</h2>
 <pre><code>cd /opt/tools
 wget https://openresty.org/download/openresty-1.9.7.5.tar.gz
 </code></pre>
-<h2 id="nginx_3">解压nginx</h2>
+<h2 id="nginx_2">解压nginx</h2>
 <pre><code>tar -xzvf openresty-1.9.7.5.tar.gz
 </code></pre>
 <h2 id="_2">编译安装</h2>
@@ -262,11 +269,14 @@ make &amp;&amp; make install
 <p><a href="http://redis.io/" title="redis官网">http://redis.io/</a>
 安装redis(最新版3.2.1)</p>
 <hr />
-<pre><code>cd /opt/tools
+<pre><code>mkdir -p /opt/local
+cd /opt/tools
 wget http://download.redis.io/releases/redis-3.2.1.tar.gz
 tar xzf redis-3.2.1.tar.gz
 cd redis-3.2.1
-make &amp;&amp; make install
+
+make MALLOC=libc 
+make install
 </code></pre>
 <h2 id="redis_1">redis配置调整</h2>
 <pre><code>mkdir /etc/redis/
@@ -399,7 +409,7 @@ curl -H 'Content-Type: application/json' -X PUT -d '{"mappings":{"wtd_worktrend"
 </li>
 </ul>
 <h2 id="_5">添加查询插件</h2>
-<pre><code>cd ..
+<pre><code>cd /usr/share/elasticsearch
 ./bin/plugin install mobz/elasticsearch-head
 </code></pre>
 <h2 id="_6">检查天气</h2>
