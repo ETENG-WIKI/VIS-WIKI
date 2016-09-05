@@ -1,12 +1,21 @@
-安装docker控制器
----
+安装docker
+---	
+	curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/internet | sh -
+	
+	service docker restart//启动docker 
 
-	curl -SsL -o /tmp/csphere-install.sh https://csphere.cn/static/csphere-install-v2.sh
-	sudo env ROLE=controller CSPHERE_VERSION=1.0.1 /bin/sh /tmp/csphere-install.sh
-安装docker-agent
+	docker --version或docker info //查看docker版本
+安装希云
 ---
+* 安装Controller
+	
+		curl -SsL -o /tmp/csphere-install.sh https://csphere.cn/static/csphere-install-v2.sh
+		sudo env ROLE=controller CSPHERE_VERSION=1.0.1 /bin/sh /tmp/csphere-install.sh
 
-打开浏览器，访问controller A主机的1016端口，第一次访问填入管理员邮箱密码注册，即可看到控制台的界面。 点击左侧的“主机”菜单，进入主机列表页面，点击“添加主机”并复制脚本，在Agent主机安装Agent程序，即可开始希云cSphere旅途。
+	**注意：** 希云安装，如果是多台服务器，只需要在一台上面装controller
+* 安装agent
+
+	打开浏览器，访问controller A主机的1016端口，第一次访问填入管理员邮箱密码注册，即可看到控制台的界面。 点击左侧的“主机”菜单，进入主机列表页面，点击“添加主机”并复制脚本，在Agent主机安装Agent程序，即可开始希云cSphere旅途。
 
 添加docker命令
 ---
@@ -42,6 +51,9 @@ centos7端口号开放
  * 重启防火墙
  
 	 	firewall-cmd --reload 
+ * 查看已开启的端口号
+ 
+	 	firewall-cmd --list-all 
 
 nginx安装依赖
 ---
@@ -106,7 +118,7 @@ redis添加密码(可忽略)
 获取elasticsearch镜像
 ---
 
-	docker run -d -p 9200:9200 -p 9300:9300 --name=elasticsearch elasticsearch:2.3.4
+	docker run -d -p 9200:9200 -p 9300:9300 --name=elasticsearch -e "ES_JAVA_OPTS=-Xms1g -Xmx1g" elasticsearch:2.3.4
 
 	docker-enter elasticsearch
 
@@ -203,13 +215,13 @@ redis添加密码(可忽略)
 
 以上出错的解决办法：
 
-* 删除索引库，然后重新走步骤一和二：
+  * 删除索引库，然后重新走步骤一和二：
 
-	curl -X DELETE 'http://localhost:9200/villagesale'
+		curl -X DELETE 'http://localhost:9200/villagesale'
 
-* 返回数据为下面的结果时，则删除成功。 
+  * 返回数据为下面的结果时，则删除成功。 
 
-	{"acknowledged":true}
+		{"acknowledged":true}
 
 添加查询插件
 ---
