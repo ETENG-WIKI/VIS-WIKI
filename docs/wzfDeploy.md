@@ -13,6 +13,7 @@
 		sudo env ROLE=controller CSPHERE_VERSION=1.0.1 /bin/sh /tmp/csphere-install.sh
 
 	**注意：** 希云安装，如果是多台服务器，只需要在一台上面装controller
+
 * 安装agent
 
 	打开浏览器，访问controller A主机的1016端口，第一次访问填入管理员邮箱密码注册，即可看到控制台的界面。 点击左侧的“主机”菜单，进入主机列表页面，点击“添加主机”并复制脚本，在Agent主机安装Agent程序，即可开始希云cSphere旅途。
@@ -51,11 +52,12 @@ centos7端口号开放
  * 重启防火墙
  
 	 	firewall-cmd --reload 
+
  * 查看已开启的端口号
  
 	 	firewall-cmd --list-all 
 
-nginx安装依赖
+安装nginx和redis依赖
 ---
 	yum install -y readline-devel pcre-devel openssl-devel gcc
 
@@ -83,11 +85,14 @@ redis官网
 [http://redis.io/](http://redis.io/ "redis官网")
 安装redis(最新版3.2.1)
 ---
+	mkdir -p /opt/local
 	cd /opt/tools
 	wget http://download.redis.io/releases/redis-3.2.1.tar.gz
 	tar xzf redis-3.2.1.tar.gz
 	cd redis-3.2.1
-	make && make install
+
+	make MALLOC=libc 
+	make install
 
 redis配置调整
 ---
@@ -225,7 +230,7 @@ redis添加密码(可忽略)
 
 添加查询插件
 ---
-	cd ..
+	cd /usr/share/elasticsearch
 	./bin/plugin install mobz/elasticsearch-head
 
 检查天气
