@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>禅道和版本 - 乡村销客知识库</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "禅道和版本";
+    var mkdocs_page_input_path = "VRS.md";
+    var mkdocs_page_url = "/VRS/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> 乡村销客知识库</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">首页</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../svn/">SVN</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../wzfDeploy/">服务器部署</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">禅道和版本</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#bug">规范禅道（bug/需求）标题格式规范</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#_1">新版本开发及上线流程</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">乡村销客知识库</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>禅道和版本</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="bug"><strong>规范禅道（bug/需求）标题格式规范</strong></h1>
+<p><strong>bug标题定义示例</strong></p>
+<pre><code>“BUG/需求”-“系统入口”-“节点名称”-“简述”
+
+例：BUG-WEB-订单执行情况表-需要添加发货组织查询条件和显示
+</code></pre>
+<p><strong>注释：</strong></p>
+<ul>
+<li>
+<p>“系统入口”暂定义为4种：WEB、APP、TV、WX</p>
+</li>
+<li>
+<p>“简述”内容需要指出需要改成什么样子或者问题出在哪里，切忌模棱两可的简述</p>
+</li>
+</ul>
+<h1 id="_1"><strong>新版本开发及上线流程</strong></h1>
+<ol>
+<li>
+<p><strong>确认评估发版内容</strong></p>
+<p>版本发版内容主要来源两个部分：</p>
+<pre><code>第一是已经确认过的需求文档；
+
+第二是根据禅道BUG清单确认当前版本需要更改的内容。
+</code></pre>
+</li>
+<li>
+<p><strong>制定开发计划</strong></p>
+<pre><code>此次发版有关小组的负责人以及实施人员确认开发周期以及开发计划。
+</code></pre>
+</li>
+<li>
+<p><strong>准备测试案例</strong></p>
+<pre><code>开发计划确定以后，实施人员开始着手准备测试案例以及测试数据。
+</code></pre>
+</li>
+<li>
+<p><strong>开发</strong></p>
+<pre><code>版本相关的小组开发成员根据开发计划开发与内测
+</code></pre>
+</li>
+<li>
+<p><strong>测试封版</strong></p>
+<pre><code>封出测试版本，实施以及相关人员开始测试。
+发现bug提交禅道，根据bug具体情况决定当前版本解决或下个版本解决。
+
+发布上线计划。
+</code></pre>
+</li>
+<li>
+<p><strong>正式封版</strong></p>
+<pre><code>封出正式版本，相关人员提前准备正式上线。
+</code></pre>
+</li>
+</ol>
+<p><strong>流程图形展示如下：</strong></p>
+<p><img alt="定义发版计划流程" src="http://i.imgur.com/a5uxAyR.png" /></p>
+<p><strong>注释：</strong></p>
+<ul>
+<li>
+<p>图中星星位置为关键时刻</p>
+</li>
+<li>
+<p>每次确认发版内容时需要决定当前版本的负责人</p>
+</li>
+<li>
+<p>每个关键时刻各小组相关人员需要向负责人汇报当前进度</p>
+</li>
+<li>
+<p>负责人需要时刻了解整体进度</p>
+</li>
+<li>
+<p>正式上线时，涉及到的小组需要人员留守</p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../wzfDeploy/" class="btn btn-neutral" title="服务器部署"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../wzfDeploy/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+
+</body>
+</html>
