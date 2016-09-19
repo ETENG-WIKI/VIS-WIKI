@@ -84,6 +84,7 @@ nginx官网
 redis官网
 ---
 [http://redis.io/](http://redis.io/ "redis官网")
+
 安装redis(最新版3.2.1)
 ---
 	mkdir -p /opt/local
