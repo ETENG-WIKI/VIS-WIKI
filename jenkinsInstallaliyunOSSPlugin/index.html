@@ -8,7 +8,7 @@
   
   
   
-  <title>禅道和版本 - 乡村销客知识库</title>
+  <title>jenkins插件 - 乡村销客知识库</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "禅道和版本";
-    var mkdocs_page_input_path = "VRS.md";
-    var mkdocs_page_url = "/VRS/";
+    var mkdocs_page_name = "jenkins插件";
+    var mkdocs_page_input_path = "jenkinsInstallaliyunOSSPlugin.md";
+    var mkdocs_page_url = "/jenkinsInstallaliyunOSSPlugin/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -76,25 +76,30 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">禅道和版本</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#bug">规范禅道（bug/需求）标题格式规范</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#_1">新版本开发及上线流程</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../VRS/">禅道和版本</a>
         
     </li>
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../jenkinsInstallaliyunOSSPlugin/">jenkins插件</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">jenkins插件</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#jenkinsoss">Jenkins安装阿里云OSS服务插件</a></li>
+                
+                    <li><a class="toctree-l4" href="#_1">插件地址</a></li>
+                
+                    <li><a class="toctree-l4" href="#_2">插件安装</a></li>
+                
+                    <li><a class="toctree-l4" href="#_3">配置插件</a></li>
+                
+                    <li><a class="toctree-l4" href="#_4">项目配置</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
@@ -121,7 +126,7 @@
     
       
     
-    <li>禅道和版本</li>
+    <li>jenkins插件</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -131,80 +136,29 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="bug"><strong>规范禅道（bug/需求）标题格式规范</strong></h1>
-<p><strong>bug标题定义示例</strong></p>
-<pre><code>“BUG/需求”-“系统入口”-“节点名称”-“简述”
-
-例：BUG-WEB-订单执行情况表-需要添加发货组织查询条件和显示
+                <h1 id="jenkinsoss">Jenkins安装阿里云OSS服务插件</h1>
+<h2 id="_1">插件地址</h2>
+<p>上传文件至阿里云插件下载地址：</p>
+<p><a href="http://repository-proxy.fit2cloud.com:8080/content/repositories/releases/org/jenkins-ci/plugins/aliyun-oss/0.6/aliyun-oss-0.6.hpi" title="上传文件至阿里云插件">http://repository-proxy.fit2cloud.com:8080/content/repositories/releases/org/jenkins-ci/plugins/aliyun-oss/0.6/aliyun-oss-0.6.hpi </a> </p>
+<h2 id="_2">插件安装</h2>
+<p>系统管理---&gt; 管理插件 ---&gt;高级----&gt;上传插件
+<img alt="找到高级" src="http://i.imgur.com/98hglhX.png" /></p>
+<p><img alt="找到上传插件" src="http://i.imgur.com/oOKf7Fu.png" /></p>
+<h2 id="_3">配置插件</h2>
+<p>系统管理---&gt; 系统设置 ---&gt;阿里云OSS帐号设置
+<img alt="配置阿里云帐号信息" src="http://i.imgur.com/4vcgZ3h.png" /></p>
+<p>阿里云EndPoint后缀:</p>
+<pre><code>如果jenkins在阿里云服务器安装建议配置"-internal.aliyuncs.com";
+在其他服务器上建议配置".aliyuncs.com".
 </code></pre>
-<p><strong>注释：</strong></p>
-<ul>
-<li>
-<p>“系统入口”暂定义为4种：WEB、APP、TV、WX</p>
-</li>
-<li>
-<p>“简述”内容需要指出需要改成什么样子或者问题出在哪里，切忌模棱两可的简述</p>
-</li>
-</ul>
-<h1 id="_1"><strong>新版本开发及上线流程</strong></h1>
-<ol>
-<li>
-<p><strong>确认评估发版内容</strong></p>
-<p>版本发版内容主要来源两个部分：</p>
-<pre><code>第一是已经确认过的需求文档；
-
-第二是根据禅道BUG清单确认当前版本需要更改的内容。
+<h2 id="_4">项目配置</h2>
+<p>找到对应的项目---&gt;配置---&gt;增加构建后操作步骤---&gt;上传Artifacts到阿里云OSS</p>
+<p><img alt="配置上传信息" src="http://i.imgur.com/8Gislrc.png" /></p>
+<p>说明：</p>
+<pre><code>Bucket名称: artifact要存放的bucket
+要上传的artifacts: 文件之间用;隔开。支持通配符描述，比如 *.apk
+Object前缀设置：可以设置object key的前缀 比如：VISAPPTEST
 </code></pre>
-</li>
-<li>
-<p><strong>制定开发计划</strong></p>
-<pre><code>此次发版有关小组的负责人以及实施人员确认开发周期以及开发计划。
-</code></pre>
-</li>
-<li>
-<p><strong>准备测试案例</strong></p>
-<pre><code>开发计划确定以后，实施人员开始着手准备测试案例以及测试数据。
-</code></pre>
-</li>
-<li>
-<p><strong>开发</strong></p>
-<pre><code>版本相关的小组开发成员根据开发计划开发与内测
-</code></pre>
-</li>
-<li>
-<p><strong>测试封版</strong></p>
-<pre><code>封出测试版本，实施以及相关人员开始测试。
-发现bug提交禅道，根据bug具体情况决定当前版本解决或下个版本解决。
-
-发布上线计划。
-</code></pre>
-</li>
-<li>
-<p><strong>正式封版</strong></p>
-<pre><code>封出正式版本，相关人员提前准备正式上线。
-</code></pre>
-</li>
-</ol>
-<p><strong>流程图形展示如下：</strong></p>
-<p><img alt="定义发版计划流程" src="http://i.imgur.com/a5uxAyR.png" /></p>
-<p><strong>注释：</strong></p>
-<ul>
-<li>
-<p>图中星星位置为关键时刻</p>
-</li>
-<li>
-<p>每次确认发版内容时需要决定当前版本的负责人</p>
-</li>
-<li>
-<p>每个关键时刻各小组相关人员需要向负责人汇报当前进度</p>
-</li>
-<li>
-<p>负责人需要时刻了解整体进度</p>
-</li>
-<li>
-<p>正式上线时，涉及到的小组需要人员留守</p>
-</li>
-</ul>
               
             </div>
           </div>
@@ -212,10 +166,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../jenkinsInstallaliyunOSSPlugin/" class="btn btn-neutral float-right" title="jenkins插件">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../wzfDeploy/" class="btn btn-neutral" title="服务器部署"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../VRS/" class="btn btn-neutral" title="禅道和版本"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -241,10 +193,8 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../wzfDeploy/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../VRS/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../jenkinsInstallaliyunOSSPlugin/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
