@@ -4,5 +4,6 @@ pages:
 - SVN: svn.md
 - 服务器部署: wzfDeploy.md
 - 禅道和版本: VRS.md
-- jenkins插件: jenkinsInstallaliyunOSSPlugin.md
+- Jenkins插件: jenkinsInstallaliyunOSSPlugin.md
+- CentOS6安装FTP: centos6InstallFtp.md
 theme: readthedocs
