@@ -188,7 +188,7 @@
         {
             "location": "/jenkinsInstallaliyunOSSPlugin/", 
             "text": "Jenkins\u5b89\u88c5\u963f\u91cc\u4e91OSS\u670d\u52a1\u63d2\u4ef6\n\n\n\u63d2\u4ef6\u5730\u5740\n\n\n\u4e0a\u4f20\u6587\u4ef6\u81f3\u963f\u91cc\u4e91\u63d2\u4ef6\u4e0b\u8f7d\u5730\u5740\uff1a\n\n\nhttp://repository-proxy.fit2cloud.com:8080/content/repositories/releases/org/jenkins-ci/plugins/aliyun-oss/0.6/aliyun-oss-0.6.hpi \n \n\n\n\u63d2\u4ef6\u5b89\u88c5\n\n\n\u7cfb\u7edf\u7ba1\u7406---\n \u7ba1\u7406\u63d2\u4ef6 ---\n\u9ad8\u7ea7----\n\u4e0a\u4f20\u63d2\u4ef6\n\n\n\n\n\n\u914d\u7f6e\u63d2\u4ef6\n\n\n\u7cfb\u7edf\u7ba1\u7406---\n \u7cfb\u7edf\u8bbe\u7f6e ---\n\u963f\u91cc\u4e91OSS\u5e10\u53f7\u8bbe\u7f6e\n\n\n\n\u963f\u91cc\u4e91EndPoint\u540e\u7f00:\n\n\n\u5982\u679cjenkins\u5728\u963f\u91cc\u4e91\u670d\u52a1\u5668\u5b89\u88c5\u5efa\u8bae\u914d\u7f6e\"-internal.aliyuncs.com\";\n\u5728\u5176\u4ed6\u670d\u52a1\u5668\u4e0a\u5efa\u8bae\u914d\u7f6e\".aliyuncs.com\".\n\n\n\n\u9879\u76ee\u914d\u7f6e\n\n\n\u627e\u5230\u5bf9\u5e94\u7684\u9879\u76ee---\n\u914d\u7f6e---\n\u589e\u52a0\u6784\u5efa\u540e\u64cd\u4f5c\u6b65\u9aa4---\n\u4e0a\u4f20Artifacts\u5230\u963f\u91cc\u4e91OSS\n\n\n\n\n\u8bf4\u660e\uff1a\n\n\nBucket\u540d\u79f0: artifact\u8981\u5b58\u653e\u7684bucket\n\u8981\u4e0a\u4f20\u7684artifacts: \u6587\u4ef6\u4e4b\u95f4\u7528;\u9694\u5f00\u3002\u652f\u6301\u901a\u914d\u7b26\u63cf\u8ff0\uff0c\u6bd4\u5982 *.apk\nObject\u524d\u7f00\u8bbe\u7f6e\uff1a\u53ef\u4ee5\u8bbe\u7f6eobject key\u7684\u524d\u7f00 \u6bd4\u5982\uff1aVISAPPTEST", 
-            "title": "jenkins\u63d2\u4ef6"
+            "title": "Jenkins\u63d2\u4ef6"
         }, 
         {
             "location": "/jenkinsInstallaliyunOSSPlugin/#jenkinsoss", 
@@ -214,6 +214,51 @@
             "location": "/jenkinsInstallaliyunOSSPlugin/#_4", 
             "text": "\u627e\u5230\u5bf9\u5e94\u7684\u9879\u76ee--- \u914d\u7f6e--- \u589e\u52a0\u6784\u5efa\u540e\u64cd\u4f5c\u6b65\u9aa4--- \u4e0a\u4f20Artifacts\u5230\u963f\u91cc\u4e91OSS   \u8bf4\u660e\uff1a  Bucket\u540d\u79f0: artifact\u8981\u5b58\u653e\u7684bucket\n\u8981\u4e0a\u4f20\u7684artifacts: \u6587\u4ef6\u4e4b\u95f4\u7528;\u9694\u5f00\u3002\u652f\u6301\u901a\u914d\u7b26\u63cf\u8ff0\uff0c\u6bd4\u5982 *.apk\nObject\u524d\u7f00\u8bbe\u7f6e\uff1a\u53ef\u4ee5\u8bbe\u7f6eobject key\u7684\u524d\u7f00 \u6bd4\u5982\uff1aVISAPPTEST", 
             "title": "\u9879\u76ee\u914d\u7f6e"
+        }, 
+        {
+            "location": "/centos6InstallFtp/", 
+            "text": "CentOS6\u5b89\u88c5ftp\u670d\u52a1\u5668\n\n\n\u5b89\u88c5vsftp\n\n\n\n\n\u67e5\u770b\u662f\u5426\u5df2\u5b89\u88c5vsftpd\nrpm -qa |grep vsftpd\n\n\n\n\n\n\n\n\u5b89\u88c5vsftpd\n\n\nyum install vsftpd -y \n\n\n\n\n\n\n\n\n\n\n\u914d\u7f6e\u865a\u62df\u7528\u6237\n\n\n\u6240\u8c13\u865a\u62df\u7528\u6237\u5c31\u662f\u6ca1\u6709\u4f7f\u7528\u771f\u5b9e\u7684\u5e10\u6237\uff0c\u53ea\u662f\u901a\u8fc7\u6620\u5c04\u5230\u771f\u5b9e\u5e10\u6237\u548c\u8bbe\u7f6e\u6743\u9650\u7684\u76ee\u7684\u3002\u865a\u62df\u7528\u6237\u4e0d\u80fd\u767b\u5f55CentOS\u7cfb\u7edf\u3002\n\n\n\u4fee\u6539\u914d\u7f6e\u6587\u4ef6\uff1a\n\n\n#\u8bbe\u5b9a\u4e0d\u5141\u8bb8\u533f\u540d\u8bbf\u95ee\nanonymous_enable=NO\nlocal_enable=YES\nlocal_umask=022\ndirmessage_enable=YES\nconnect_from_port_20=YES\n#\u8bbe\u5b9a\u652f\u6301ASCII\u6a21\u5f0f\u7684\u4e0a\u4f20\u548c\u4e0b\u8f7d\u529f\u80fd\nascii_upload_enable=YES\nascii_download_enable=YES\n#chroot_local_user=YES\n#\u4f7f\u7528\u6237\u4e0d\u80fd\u79bb\u5f00\u4e3b\u76ee\u5f55\nchroot_list_enable=YES\nchroot_list_file=/etc/vsftpd/vuser_passwd.txt\n#PAM\u8ba4\u8bc1\u6587\u4ef6\u540d\uff0cPAM\u5c06\u6839\u636e/etc/pam.d/vsftpd\u8fdb\u884c\u8ba4\u8bc1\npam_service_name=vsftpd\nuser_list_enable=YES\ntcp_wrapper=YES\nguest_enable=YES\nguest_username=ftp\nuser_congig_dir=/etc/vsftpd/vuser_conf\n\n\n\n\u4f7f\u7528Berkeley DB\u8fdb\u884c\u8ba4\u8bc1\n\n\n\n\n\n\n\u5b89\u88c5\u5de5\u5177\n\n\nyum install db4 db4-utils\n\n\n\n\n\n\n\n\u521b\u5efa\u5bc6\u7801\u6587\u4ef6\n\n\nvi /etc/vsftpd/vuser_passwd.txt\nftpuser\nftppasswd\n\n\n\n\u6ce8\u610f\uff1a \u5947\u884c\u662f\u7528\u6237\u540d\uff0c\u5076\u884c\u662f\u5bc6\u7801\n\n\n\n\n\n\n\u751f\u6210\u865a\u62df\u7528\u6237\u8ba4\u8bc1\n\n\n\n\n\u7f16\u8f91\u8ba4\u8bc1\u6587\u4ef6/etc/pam.d/vsftpd \u5168\u90e8\u6ce8\u91ca\uff0c\u6dfb\u52a0\u4e0b\u9762\u5185\u5bb9\nvi  /etc/pam.d/vsftpd\nauth required pam_userdb.so db=/etc/vsftpd/vuser_passwd\naccount required pam_userdb.so db=/etc/vsftpd/vuser_passwd\n* \u751f\u6210\u865a\u62df\u7528\u6237\u8ba4\u8bc1\u7684db\u6587\u4ef6\n\ndb_load -T -t hash -f /etc/vsftpd/vuser_passwd.txt /etc/vsftpd/vuser_passwd.db\n\n\n\n\n\n\n\n\n\n\n\n\u521b\u5efa\u865a\u62df\u7528\u6237\u914d\u7f6e\u6587\u4ef6\n\n\n\n\n\n\n\u521b\u5efa\u914d\u7f6e\u6587\u4ef6\u76ee\u5f55\n\n\ncd /etc/vsftpd\nmkdir vuser_conf\n\n\n\n\n\n\n\n\u521b\u5efa\u914d\u7f6e\u6587\u4ef6\n\n\n#\u6587\u4ef6\u540d\u662fvuser_passwd.txt\u6587\u4ef6\u4e2d\u63d0\u4f9b\u7684\u7528\u6237\u540d\uff0c\u5426\u5219\u65e0\u6548     \nvi /etc/vsftpd/vuser_conf/ftpuser\n\n#\u865a\u62df\u7528\u6237\u6839\u76ee\u5f55\uff0c\u6839\u636e\u5b9e\u9645\u60c5\u51b5\u4fee\u6539\nlocal_root=/opt/logs\nwrite_enable=YES\nanon_umask=022\nanon_world_readable_only=NO\nanon_upload_enable=YES\nanon_mkdir_write_enable=YES\nanon_other_write_enable=YES\n\n\n\n\n\n\n\n\u5b9a\u4e49ftp\u8bbf\u95ee\u76ee\u5f55\n\n\nmkdir -p /opt/logs\n\n\n\n\u5f00\u542fftp\u7aef\u53e3\n\n\nvi /etc/sysconfig/iptables\n#\u5f00\u653e21\u7aef\u53e3\n-A INPUT -m state --state NEW -m tcp -p tcp --dport 21 -j ACCEPT\n#\u91cd\u542f\u9632\u706b\u5899\nservice iptables restart\n\n\n\n\u542f\u52a8ftp\u670d\u52a1\n\n\n#\u542f\u52a8ftp\nservice vsftpd start\n#\u5173\u95edftp\nservice vsftpd stop\n#\u91cd\u542fftp\nservice vsftpd restart", 
+            "title": "CentOS6\u5b89\u88c5FTP"
+        }, 
+        {
+            "location": "/centos6InstallFtp/#centos6ftp", 
+            "text": "", 
+            "title": "CentOS6\u5b89\u88c5ftp\u670d\u52a1\u5668"
+        }, 
+        {
+            "location": "/centos6InstallFtp/#vsftp", 
+            "text": "\u67e5\u770b\u662f\u5426\u5df2\u5b89\u88c5vsftpd rpm -qa |grep vsftpd    \u5b89\u88c5vsftpd  yum install vsftpd -y", 
+            "title": "\u5b89\u88c5vsftp"
+        }, 
+        {
+            "location": "/centos6InstallFtp/#_1", 
+            "text": "\u6240\u8c13\u865a\u62df\u7528\u6237\u5c31\u662f\u6ca1\u6709\u4f7f\u7528\u771f\u5b9e\u7684\u5e10\u6237\uff0c\u53ea\u662f\u901a\u8fc7\u6620\u5c04\u5230\u771f\u5b9e\u5e10\u6237\u548c\u8bbe\u7f6e\u6743\u9650\u7684\u76ee\u7684\u3002\u865a\u62df\u7528\u6237\u4e0d\u80fd\u767b\u5f55CentOS\u7cfb\u7edf\u3002  \u4fee\u6539\u914d\u7f6e\u6587\u4ef6\uff1a  #\u8bbe\u5b9a\u4e0d\u5141\u8bb8\u533f\u540d\u8bbf\u95ee\nanonymous_enable=NO\nlocal_enable=YES\nlocal_umask=022\ndirmessage_enable=YES\nconnect_from_port_20=YES\n#\u8bbe\u5b9a\u652f\u6301ASCII\u6a21\u5f0f\u7684\u4e0a\u4f20\u548c\u4e0b\u8f7d\u529f\u80fd\nascii_upload_enable=YES\nascii_download_enable=YES\n#chroot_local_user=YES\n#\u4f7f\u7528\u6237\u4e0d\u80fd\u79bb\u5f00\u4e3b\u76ee\u5f55\nchroot_list_enable=YES\nchroot_list_file=/etc/vsftpd/vuser_passwd.txt\n#PAM\u8ba4\u8bc1\u6587\u4ef6\u540d\uff0cPAM\u5c06\u6839\u636e/etc/pam.d/vsftpd\u8fdb\u884c\u8ba4\u8bc1\npam_service_name=vsftpd\nuser_list_enable=YES\ntcp_wrapper=YES\nguest_enable=YES\nguest_username=ftp\nuser_congig_dir=/etc/vsftpd/vuser_conf", 
+            "title": "\u914d\u7f6e\u865a\u62df\u7528\u6237"
+        }, 
+        {
+            "location": "/centos6InstallFtp/#berkeley-db", 
+            "text": "\u5b89\u88c5\u5de5\u5177  yum install db4 db4-utils    \u521b\u5efa\u5bc6\u7801\u6587\u4ef6  vi /etc/vsftpd/vuser_passwd.txt\nftpuser\nftppasswd  \u6ce8\u610f\uff1a \u5947\u884c\u662f\u7528\u6237\u540d\uff0c\u5076\u884c\u662f\u5bc6\u7801    \u751f\u6210\u865a\u62df\u7528\u6237\u8ba4\u8bc1   \u7f16\u8f91\u8ba4\u8bc1\u6587\u4ef6/etc/pam.d/vsftpd \u5168\u90e8\u6ce8\u91ca\uff0c\u6dfb\u52a0\u4e0b\u9762\u5185\u5bb9 vi  /etc/pam.d/vsftpd\nauth required pam_userdb.so db=/etc/vsftpd/vuser_passwd\naccount required pam_userdb.so db=/etc/vsftpd/vuser_passwd\n* \u751f\u6210\u865a\u62df\u7528\u6237\u8ba4\u8bc1\u7684db\u6587\u4ef6\n\ndb_load -T -t hash -f /etc/vsftpd/vuser_passwd.txt /etc/vsftpd/vuser_passwd.db", 
+            "title": "\u4f7f\u7528Berkeley DB\u8fdb\u884c\u8ba4\u8bc1"
+        }, 
+        {
+            "location": "/centos6InstallFtp/#_2", 
+            "text": "\u521b\u5efa\u914d\u7f6e\u6587\u4ef6\u76ee\u5f55  cd /etc/vsftpd\nmkdir vuser_conf    \u521b\u5efa\u914d\u7f6e\u6587\u4ef6  #\u6587\u4ef6\u540d\u662fvuser_passwd.txt\u6587\u4ef6\u4e2d\u63d0\u4f9b\u7684\u7528\u6237\u540d\uff0c\u5426\u5219\u65e0\u6548     \nvi /etc/vsftpd/vuser_conf/ftpuser\n\n#\u865a\u62df\u7528\u6237\u6839\u76ee\u5f55\uff0c\u6839\u636e\u5b9e\u9645\u60c5\u51b5\u4fee\u6539\nlocal_root=/opt/logs\nwrite_enable=YES\nanon_umask=022\nanon_world_readable_only=NO\nanon_upload_enable=YES\nanon_mkdir_write_enable=YES\nanon_other_write_enable=YES", 
+            "title": "\u521b\u5efa\u865a\u62df\u7528\u6237\u914d\u7f6e\u6587\u4ef6"
+        }, 
+        {
+            "location": "/centos6InstallFtp/#ftp", 
+            "text": "mkdir -p /opt/logs", 
+            "title": "\u5b9a\u4e49ftp\u8bbf\u95ee\u76ee\u5f55"
+        }, 
+        {
+            "location": "/centos6InstallFtp/#ftp_1", 
+            "text": "vi /etc/sysconfig/iptables\n#\u5f00\u653e21\u7aef\u53e3\n-A INPUT -m state --state NEW -m tcp -p tcp --dport 21 -j ACCEPT\n#\u91cd\u542f\u9632\u706b\u5899\nservice iptables restart", 
+            "title": "\u5f00\u542fftp\u7aef\u53e3"
+        }, 
+        {
+            "location": "/centos6InstallFtp/#ftp_2", 
+            "text": "#\u542f\u52a8ftp\nservice vsftpd start\n#\u5173\u95edftp\nservice vsftpd stop\n#\u91cd\u542fftp\nservice vsftpd restart", 
+            "title": "\u542f\u52a8ftp\u670d\u52a1"
         }
     ]
 }

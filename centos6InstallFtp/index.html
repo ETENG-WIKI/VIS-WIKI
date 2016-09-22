@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>CentOS6安装FTP - 乡村销客知识库</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "CentOS6安装FTP";
+    var mkdocs_page_input_path = "centos6InstallFtp.md";
+    var mkdocs_page_url = "/centos6InstallFtp/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> 乡村销客知识库</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">首页</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../svn/">SVN</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../wzfDeploy/">服务器部署</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../VRS/">禅道和版本</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../jenkinsInstallaliyunOSSPlugin/">Jenkins插件</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">CentOS6安装FTP</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#centos6ftp">CentOS6安装ftp服务器</a></li>
+                
+                    <li><a class="toctree-l4" href="#vsftp">安装vsftp</a></li>
+                
+                    <li><a class="toctree-l4" href="#_1">配置虚拟用户</a></li>
+                
+                    <li><a class="toctree-l4" href="#berkeley-db">使用Berkeley DB进行认证</a></li>
+                
+                    <li><a class="toctree-l4" href="#_2">创建虚拟用户配置文件</a></li>
+                
+                    <li><a class="toctree-l4" href="#ftp">定义ftp访问目录</a></li>
+                
+                    <li><a class="toctree-l4" href="#ftp_1">开启ftp端口</a></li>
+                
+                    <li><a class="toctree-l4" href="#ftp_2">启动ftp服务</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">乡村销客知识库</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>CentOS6安装FTP</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="centos6ftp"><a href="http://jingyan.baidu.com/article/95c9d20d4e1222ec4e7561fc.html?qq-pf-to=pcqq.group">CentOS6安装ftp服务器</a></h1>
+<h2 id="vsftp">安装vsftp</h2>
+<ul>
+<li>查看是否已安装vsftpd<pre><code>rpm -qa |grep vsftpd
+</code></pre>
+<ul>
+<li>
+<p>安装vsftpd</p>
+<p>yum install vsftpd -y </p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="_1">配置虚拟用户</h2>
+<p>所谓虚拟用户就是没有使用真实的帐户，只是通过映射到真实帐户和设置权限的目的。虚拟用户不能登录CentOS系统。</p>
+<p>修改配置文件：</p>
+<pre><code>#设定不允许匿名访问
+anonymous_enable=NO
+local_enable=YES
+local_umask=022
+dirmessage_enable=YES
+connect_from_port_20=YES
+#设定支持ASCII模式的上传和下载功能
+ascii_upload_enable=YES
+ascii_download_enable=YES
+#chroot_local_user=YES
+#使用户不能离开主目录
+chroot_list_enable=YES
+chroot_list_file=/etc/vsftpd/vuser_passwd.txt
+#PAM认证文件名，PAM将根据/etc/pam.d/vsftpd进行认证
+pam_service_name=vsftpd
+user_list_enable=YES
+tcp_wrapper=YES
+guest_enable=YES
+guest_username=ftp
+user_congig_dir=/etc/vsftpd/vuser_conf
+</code></pre>
+<h2 id="berkeley-db">使用Berkeley DB进行认证</h2>
+<ul>
+<li>
+<p>安装工具</p>
+<pre><code>yum install db4 db4-utils
+</code></pre>
+</li>
+<li>
+<p>创建密码文件</p>
+<pre><code>vi /etc/vsftpd/vuser_passwd.txt
+ftpuser
+ftppasswd
+</code></pre>
+<p><strong>注意： 奇行是用户名，偶行是密码</strong></p>
+</li>
+<li>
+<p>生成虚拟用户认证</p>
+<ul>
+<li>编辑认证文件/etc/pam.d/vsftpd 全部注释，添加下面内容<pre><code>vi  /etc/pam.d/vsftpd
+auth required pam_userdb.so db=/etc/vsftpd/vuser_passwd
+account required pam_userdb.so db=/etc/vsftpd/vuser_passwd
+* 生成虚拟用户认证的db文件
+
+db_load -T -t hash -f /etc/vsftpd/vuser_passwd.txt /etc/vsftpd/vuser_passwd.db
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="_2">创建虚拟用户配置文件</h2>
+<ul>
+<li>
+<p>创建配置文件目录</p>
+<pre><code>cd /etc/vsftpd
+mkdir vuser_conf
+</code></pre>
+</li>
+<li>
+<p>创建配置文件</p>
+<pre><code>#文件名是vuser_passwd.txt文件中提供的用户名，否则无效     
+vi /etc/vsftpd/vuser_conf/ftpuser
+
+#虚拟用户根目录，根据实际情况修改
+local_root=/opt/logs
+write_enable=YES
+anon_umask=022
+anon_world_readable_only=NO
+anon_upload_enable=YES
+anon_mkdir_write_enable=YES
+anon_other_write_enable=YES
+</code></pre>
+</li>
+</ul>
+<h2 id="ftp">定义ftp访问目录</h2>
+<pre><code>mkdir -p /opt/logs
+</code></pre>
+<h2 id="ftp_1">开启ftp端口</h2>
+<pre><code>vi /etc/sysconfig/iptables
+#开放21端口
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 21 -j ACCEPT
+#重启防火墙
+service iptables restart
+</code></pre>
+<h2 id="ftp_2">启动ftp服务</h2>
+<pre><code>#启动ftp
+service vsftpd start
+#关闭ftp
+service vsftpd stop
+#重启ftp
+service vsftpd restart
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../jenkinsInstallaliyunOSSPlugin/" class="btn btn-neutral" title="Jenkins插件"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../jenkinsInstallaliyunOSSPlugin/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+
+</body>
+</html>
